@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 # Core tools for working with the system
 
@@ -19,6 +19,7 @@ else
 fi
 
 
+
 # rust programs
 cargo install bat
 cargo install difftastic
@@ -28,7 +29,19 @@ sudo apt install -y \
   tmux \
   zsh
 
-# stow git 
+
+# stow git
+
+# tell the user to kackup their zshrc
+# mv ~/.zshrc ~/.zshrc.backup
+stow -d $STOW_DIR -t ~/ zsh 
+
+# install node js (needed for copilot)
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# reset shell
+source ~/.zshrc
+
+nvm install node
 
 # stow tmux
 # ./get-tmux-rst.sh

@@ -7,21 +7,39 @@ set -xe
 sudo apt update
 sudo apt upgrade
 
+STOW_DIR="../stow_dot_files"
+
 # TODO: Make sure cargo is installed.
 
 # Needed for alacritty build.
 sudo apt install -y cmake libfontconfig1-dev
 
+
+
 cargo install alacritty
 # make alacritty the default terminal
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $HOME/.cargo/bin/alacritty 110
 
+# download fonts and move to ~/.local/share/fonts if not already there
+if [ ! -d ~/.local/share/fonts/mesloLGS_NF ]; then
+  mkdir -p ~/.local/share/fonts/mesloLGS_NF
+  wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf -O ~/.local/share/fonts/mesloLGS_NF/MesloLGS\ NF\ Regular.ttf
+  wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf -O ~/.local/share/fonts/mesloLGS_NF/MesloLGS\ NF\ Bold.ttf
+  wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf -O ~/.local/share/fonts/mesloLGS_NF/MesloLGS\ NF\ Italic.ttf
+  wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf -O ~/.local/share/fonts/mesloLGS_NF/MesloLGS\ NF\ Bold\ Italic.ttf
+fi
 
+# install fonts
+fc-cache -f -v
+
+stow -d $STOW_DIR -t ~/ alacritty 
 
 # flatpaks (works with pop-shop)
 flatpak install -y flathub com.visualstudio.code
 flatpak install -y flathub com.slack.Slack
 flatpak install -y flathub org.kicad.KiCad
+
+
 
 
 # gui

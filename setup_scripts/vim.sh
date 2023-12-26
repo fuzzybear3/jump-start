@@ -1,6 +1,11 @@
-#!/usr/bin/env sh
+#!/usr/bin/env zsh
 
 set -xe
+
+# Needed for AstroNvim
+cargo install tree-sitter-cli
+
+
 
 if [ $(uname -m) = x86_64 ] || [ $(uname -m) = aarch64 ]; then
   # Install latest appimage
@@ -12,6 +17,8 @@ if [ $(uname -m) = x86_64 ] || [ $(uname -m) = aarch64 ]; then
   if [ -f "$NVIM_PATH" ];
   then rm -rf "$NVIM_PATH" 
   fi
+
+
 
   # Download the latest appimage
   wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage -P $NVIM_DIR
@@ -33,3 +40,20 @@ else
   # Might need old vim and vi to be uninstaled.
   # Todo - could add a check and an error
 fi
+
+
+# install astroNvim
+# save old nvim config
+
+if [ ! -f ~/.config/nvim.bak ] && [ -f ~/.config/nvim ]; 
+then mv ~/.config/nvim ~/.config/nvim.bak; fi
+
+if [ ! -f ~/.local/share/nvim.bak ] && [ -f ~/.config/nvim ]; 
+then mv ~/.local/share/nvim ~/.local/share/nvim.bak; fi
+
+# clone astroNvim config over old config
+if [ -f ~/.config/nvim ]; 
+then rm -rf ~/.config/nvim; fi
+git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+
+
