@@ -15,7 +15,7 @@ if command -v cargo > /dev/null 2>&1; then
     echo "Rust is already installed."
 else
     echo "Installing rust."
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 fi
 
 
@@ -27,7 +27,8 @@ cargo install difftastic
 sudo apt install -y \
   stow \
   tmux \
-  zsh
+  zsh \
+  tree
 
 
 # stow git
