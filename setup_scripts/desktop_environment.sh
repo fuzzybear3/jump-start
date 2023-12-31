@@ -5,7 +5,7 @@
 set -xe
 
 sudo apt update
-sudo apt upgrade
+sudo apt upgrade -y
 
 STOW_DIR="../stow_dot_files"
 
