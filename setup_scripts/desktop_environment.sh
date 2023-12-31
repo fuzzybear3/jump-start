@@ -43,17 +43,16 @@ flatpak install -y flathub org.kicad.KiCad
 
 
 # gui
-# sudo apt install -y \
+sudo apt install -y \
 #   meld \
 #   peek \
 #   redshift \
 #   xcape \
-#   xclip
+  xclip # TODO weplace with wayland equivalent when I switch to wayland.
 
 # Cannot merge into single line
 # sudo snap install drawio --classic
 # sudo snap install emacs --classic
-# sudo snap install slack --classic
 
 
 # stow alacritty
