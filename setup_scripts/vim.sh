@@ -56,4 +56,6 @@ if [ -f ~/.config/nvim ];
 then rm -rf ~/.config/nvim; fi
 git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
+git config --global core.editor "nvim"
+
 

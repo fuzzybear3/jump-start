@@ -23,6 +23,7 @@ fi
 # rust programs
 cargo install bat
 cargo install difftastic
+cargo install watchexec-cli
 
 sudo apt install -y \
   stow \
