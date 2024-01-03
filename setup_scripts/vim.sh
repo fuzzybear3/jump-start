@@ -4,6 +4,7 @@ set -xe
 
 # Needed for AstroNvim
 cargo install tree-sitter-cli
+cargo install ripgrep
 
 
 
