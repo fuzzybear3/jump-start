@@ -2,6 +2,9 @@
 
 set -xe
 
+
+STOW_DIR="../stow_dot_files"
+
 # Needed for AstroNvim
 cargo install tree-sitter-cli
 cargo install ripgrep
@@ -58,5 +61,9 @@ then rm -rf ~/.config/nvim; fi
 git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
 git config --global core.editor "nvim"
+
+
+# add user configuration
+stow -d $STOW_DIR -t ~/ nvim
 
 

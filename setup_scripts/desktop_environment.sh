@@ -32,6 +32,8 @@ fi
 # install fonts
 fc-cache -f -v
 
+# stow alacritty
+cp -r ~/.config/alacritty ~/.config/alacritty_backup
 stow -d $STOW_DIR -t ~/ alacritty 
 
 # flatpaks (works with pop-shop)

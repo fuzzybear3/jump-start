@@ -34,8 +34,7 @@ sudo apt install -y \
 
 # stow git
 
-# tell the user to kackup their zshrc
-# mv ~/.zshrc ~/.zshrc.backup
+mv ~/.zshrc ~/.zshrc.backup
 stow -d $STOW_DIR -t ~/ zsh 
 
 # install node js (needed for copilot)
