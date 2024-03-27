@@ -33,7 +33,6 @@ fi
 fc-cache -f -v
 
 # stow alacritty
-cp -r ~/.config/alacritty ~/.config/alacritty_backup
 stow -d $STOW_DIR -t ~/ alacritty 
 
 # flatpaks (works with pop-shop)
@@ -46,11 +45,11 @@ flatpak install -y flathub org.kicad.KiCad
 
 # gui
 sudo apt install -y \
+xclip # TODO weplace with wayland equivalent when I switch to wayland.
 #   meld \
 #   peek \
 #   redshift \
 #   xcape \
-  xclip # TODO weplace with wayland equivalent when I switch to wayland.
 
 # Cannot merge into single line
 # sudo snap install drawio --classic
