@@ -8,7 +8,14 @@ set -xe
 
 sudo apt update
 
-# sudo apt install -y bat
+sudo apt install -y \
+  stow \
+  tmux \
+  zsh \
+  tree \
+  python3-pip \
+  python-is-python3
+
 
 # Check if cargo (Rust package manager) is installed
 if command -v cargo > /dev/null 2>&1; then
@@ -38,14 +45,6 @@ cargo install bat
 cargo install difftastic
 cargo install watchexec-cli
 cargo install bottom
-
-sudo apt install -y \
-  stow \
-  tmux \
-  zsh \
-  tree \
-  python3-pip \
-  python-is-python3
 
 
 # stow git
