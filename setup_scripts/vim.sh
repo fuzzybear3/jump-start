@@ -49,16 +49,16 @@ fi
 # install astroNvim
 # save old nvim config
 
-if [ ! -f ~/.config/nvim.bak ] && [ -f ~/.config/nvim ]; 
-then mv ~/.config/nvim ~/.config/nvim.bak; fi
+# if [ ! -f ~/.config/nvim.bak ] && [ -f ~/.config/nvim ]; 
+# then mv ~/.config/nvim ~/.config/nvim.bak; fi
 
-if [ ! -f ~/.local/share/nvim.bak ] && [ -f ~/.config/nvim ]; 
-then mv ~/.local/share/nvim ~/.local/share/nvim.bak; fi
+# if [ ! -f ~/.local/share/nvim.bak ] && [ -f ~/.config/nvim ]; 
+# then mv ~/.local/share/nvim ~/.local/share/nvim.bak; fi
 
-# clone astroNvim config over old config
-if [ -f ~/.config/nvim ]; 
-then rm -rf ~/.config/nvim; fi
-git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+# # clone astroNvim config over old config
+# if [ -f ~/.config/nvim ]; 
+# then rm -rf ~/.config/nvim; fi
+# git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
 git config --global core.editor "nvim"
 
