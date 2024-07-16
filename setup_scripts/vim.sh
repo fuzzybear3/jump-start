@@ -9,6 +9,8 @@ STOW_DIR="../stow_dot_files"
 cargo install tree-sitter-cli
 cargo install ripgrep
 
+rustup component add rust-analyzer
+
 
 
 if [ $(uname -m) = x86_64 ] || [ $(uname -m) = aarch64 ]; then
