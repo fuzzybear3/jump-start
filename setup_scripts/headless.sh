@@ -16,6 +16,7 @@ sudo apt install -y \
   python3-pip \
   python-is-python3
 
+stow -d $STOW_DIR -t ~/ git
 
 # Check if cargo (Rust package manager) is installed
 if command -v cargo > /dev/null 2>&1; then
@@ -69,10 +70,10 @@ nvm install node | zsh
 # need to run this within tmux
 # ~/.tmux/plugins/tpm/bin/install_plugins
 
-# Use our linked .zshrc, rather than the one provied by oh-my-zsh
+# Use our linked .zshrc, rather than the one provided by oh-my-zsh
 # stow -d $STOW_DIR zsh
 
-
+pip install codespell
 
 # fzf
 rm -rf ~/.fzf
