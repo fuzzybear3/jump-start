@@ -5,3 +5,5 @@
 [user]
 	email = stevenrguido@gmail.com
 	name = Steven Guido
+[init]
+	defaultBranch = main
