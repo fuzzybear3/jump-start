@@ -15,7 +15,7 @@ rustup component add rust-analyzer
 
 if [ $(uname -m) = x86_64 ] || [ $(uname -m) = aarch64 ]; then
   # Install latest appimage
-  NVIM_PATH=~/software/nvim.appimage
+  NVIM_PATH=~/software/nvim-linux-x86_64.appimage
   NVIM_DIR=$(dirname $NVIM_PATH)
 
 
@@ -27,7 +27,7 @@ if [ $(uname -m) = x86_64 ] || [ $(uname -m) = aarch64 ]; then
 
 
   # Download the latest appimage
-  wget https://github.com/neovim/neovim/releases/download/stable/nvim.appimage -P $NVIM_DIR
+  wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux-x86_64.appimage -P $NVIM_DIR
 
   # Make it executable
   chmod u+x $NVIM_PATH
@@ -61,6 +61,10 @@ fi
 # if [ -f ~/.config/nvim ]; 
 # then rm -rf ~/.config/nvim; fi
 # git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
+
+
+# Remove old config
+rm -r ~/.config/nvim
 
 git config --global core.editor "nvim"
 
