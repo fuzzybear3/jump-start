@@ -41,6 +41,9 @@ stow -d $STOW_DIR -t ~/ p10k
 #source
 . "$HOME/.cargo/env"
 
+
+rustup component add rust-analyzer
+
 # rust programs
 cargo install bat
 cargo install difftastic
