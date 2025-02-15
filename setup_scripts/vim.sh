@@ -51,6 +51,30 @@ fi
 # install astroNvim
 # save old nvim config
 
+
+# Remove the directories if they exist
+if [ -d "~/.config/nvim" ]; then
+  rm -rf ~/.config/nvim
+  echo "Removed ~/.config/nvim"
+fi
+
+if [ -d "~/.local/share/nvim" ]; then
+  rm -rf ~/.local/share/nvim
+  echo "Removed ~/.local/share/nvim"
+fi
+
+if [ -d "~/.local/state/nvim" ]; then
+  rm -rf ~/.local/state/nvim
+  echo "Removed ~/.local/state/nvim"
+fi
+
+if [ -d "~/.cache/nvim" ]; then
+  rm -rf ~/.cache/nvim
+  echo "Removed ~/.cache/nvim"
+fi
+
+
+
 # if [ ! -f ~/.config/nvim.bak ] && [ -f ~/.config/nvim ]; 
 # then mv ~/.config/nvim ~/.config/nvim.bak; fi
 
@@ -62,9 +86,6 @@ fi
 # then rm -rf ~/.config/nvim; fi
 # git clone https://github.com/AstroNvim/AstroNvim ~/.config/nvim
 
-
-# Remove old config
-rm -r ~/.config/nvim
 
 git config --global core.editor "nvim"
 
