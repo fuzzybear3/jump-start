@@ -43,9 +43,12 @@ flatpak install -y flathub org.kicad.KiCad
 
 
 
+
 # gui
 sudo apt install -y \
-xclip # TODO weplace with wayland equivalent when I switch to wayland.
+xclip \
+fscitx5 \
+fcitx5-mozc
 #   meld \
 #   peek \
 #   redshift \

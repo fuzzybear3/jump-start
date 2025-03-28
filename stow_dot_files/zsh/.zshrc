@@ -120,3 +120,9 @@ export NVM_DIR="$HOME/.nvm"
 
 # pip bin install location
 export PATH=$HOME/.local/bin:$PATH
+
+
+export GTK_IM_MODULE=fcitx5
+export QT_IM_MODULE=fcitx5
+export XMODIFIERS=@im=fcitx5
+export INPUT_METHOD=fcitx5
