@@ -1,10 +1,8 @@
-
 -- -- Set <space> as the leader key
 -- vim.g.mapleader = ' '
 -- vim.g.maplocalleader = ' '
 
-
-local map = vim.keymap.set  -- Shortcut for setting keymaps
+local map = vim.keymap.set -- Shortcut for setting keymaps
 local opts = { noremap = true, silent = true }
 
 -- File Explorer (nvim-tree)
@@ -31,9 +29,6 @@ map("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>", opts)
 -- map("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 -- map("n", "<leader>fh", ":Telescope help_tags<CR>", opts)
 
-
-
-
 vim.api.nvim_set_keymap("n", "<leader>r", ":lua ReloadConfig()<CR>", { noremap = true, silent = true })
 
-map('n', '<leader>e', ':Neotree filesystem reveal left<CR>')
+map("n", "<leader>e", ":Neotree filesystem reveal left<CR>")

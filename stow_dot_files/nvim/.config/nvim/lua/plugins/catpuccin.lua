@@ -1,13 +1,11 @@
 return {
-        "catppuccin/nvim",
-        name = "catppuccin",
-        priority = 1000,
-	init = function ()
-		vim.cmd.colorscheme "catppuccin" 
-	end,
+	"catppuccin/nvim",
+	name = "catppuccin",
+	priority = 1000,
+	init = function() vim.cmd.colorscheme "catppuccin" end,
 
 	integrations = {
-	 	treesitter = true,
-	 	telescope = true
-	}
+		treesitter = true,
+		telescope = true,
+	},
 }
