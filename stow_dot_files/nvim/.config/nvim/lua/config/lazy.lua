@@ -50,6 +50,13 @@ end
 
 
 
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = { "*.lua", "*.py", "*.cpp" },
+    callback = function()
+        vim.lsp.buf.format({ async = false })
+    end,
+})
+
 
 vim.lsp.config['luals'] = {
   -- Command and arguments to start the server.
