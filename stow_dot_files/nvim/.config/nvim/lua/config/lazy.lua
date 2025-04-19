@@ -43,6 +43,8 @@ function ReloadConfig()
 	print "🔥 Config reloaded!"
 end
 
+vim.diagnostic.config { virtual_text = true }
+
 vim.api.nvim_create_autocmd("BufWritePre", {
 	pattern = { "*.lua", "*.py", "*.cpp", "*.rs" },
 	callback = function()

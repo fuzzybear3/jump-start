@@ -73,3 +73,8 @@ vim.keymap.set("v", "<Leader>/", "gc", { remap = true }) -- visual line comment
 vim.api.nvim_set_keymap("n", "<leader>r", ":lua ReloadConfig()<CR>", { noremap = true, silent = true })
 
 map("n", "<leader>e", ":Neotree filesystem reveal left<CR>")
+
+vim.keymap.set("n", "<leader>ih", function()
+	local enabled = vim.lsp.inlay_hint.is_enabled { bufnr = 0 }
+	vim.lsp.inlay_hint.enable(not enabled, { bufnr = 0 })
+end, { desc = "Toggle Inlay Hints" })
