@@ -29,6 +29,47 @@ map("n", "<leader>d", ":lua vim.diagnostic.open_float()<CR>", opts)
 -- map("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 -- map("n", "<leader>fh", ":Telescope help_tags<CR>", opts)
 
+-- Commenting
+-- -- Normal mode binding
+-- vim.api.nvim_set_keymap(
+-- 	"n",
+-- 	"<leader>c",
+-- 	":lua require('Comment.api').toggle_current_line()<CR>",
+-- 	{ noremap = true, silent = true }
+-- )
+--
+-- -- Visual mode binding
+-- vim.api.nvim_set_keymap(
+-- 	"v",
+-- 	"<leader>c",
+-- 	":lua require('Comment.api').toggle_current_block()<CR>",
+-- 	{ noremap = true, silent = true }
+-- )
+
+-- map("n", "<leader>/", ":gcc<CR>", opts)
+-- map("v", "<leader>/", ":gc<CR>", opts)
+
+-- local comment = require "vim._comment"
+--
+-- -- Normal mode: comment current line
+-- vim.keymap.set("n", "<Leader>/", function()
+-- 	local line = vim.fn.line "."
+-- 	comment.toggle_lines(0, { line, line })
+-- end, { desc = "Toggle comment for current line" })
+
+-- vim.keymap.set({ "n", "x", "o" }, "<Leader>c", "gcc", { remap = true })
+
+-- vim.keymap.set("n", "<Leader>/", "gcc", { remap = true })
+
+vim.keymap.set(
+	"n",
+	"<Leader>/",
+	function() vim.api.nvim_feedkeys("gcc", "n", false) end,
+	{ desc = "Toggle comment (line)" }
+)
+
+vim.keymap.set("v", "<Leader>/", "gc", { remap = true }) -- visual line comment
+
 vim.api.nvim_set_keymap("n", "<leader>r", ":lua ReloadConfig()<CR>", { noremap = true, silent = true })
 
 map("n", "<leader>e", ":Neotree filesystem reveal left<CR>")
