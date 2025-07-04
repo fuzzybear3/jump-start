@@ -14,7 +14,8 @@ sudo apt install -y \
   zsh \
   tree \
   python3-pip \
-  python-is-python3
+  python-is-python3 \
+  python3.10-venv
 
 stow -d $STOW_DIR -t ~/ git
 
@@ -84,5 +85,19 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install --key-bindings --completion --no-update-rc
 
 sudo chsh -s $(which zsh) $USER
+
+
+# docker
+ curl -fsSL https://get.docker.com -o get-docker.sh
+
+ sudo sh ./get-docker.sh
+
+ sudo usermod -aG docker $USER
+
+# git lfs
+(. /etc/lsb-release &&
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh |
+sudo env os=ubuntu dist="${DISTRIB_CODENAME}" bash)
+sudo apt-get install git-lfs
 
 echo "Script finished."
