@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#/usr/bin/env bash
 
 # Core tools for working with the system
 
@@ -15,7 +15,7 @@ sudo apt install -y \
   tree \
   python3-pip \
   python-is-python3 \
-  python3.10-venv
+  python3-venv
 
 stow -d $STOW_DIR -t ~/ git
 
@@ -60,9 +60,12 @@ stow -d $STOW_DIR -t ~/ zsh
 # install node js (needed for copilot)
 wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
 # reset shell
+export NVM_DIR="$HOME/.nvm"
+source "$NVM_DIR/nvm.sh"
 # source ~/.bashrc
 
-nvm install node | zsh
+
+nvm install node
 
 # stow tmux
 # ./get-tmux-rst.sh
@@ -77,7 +80,7 @@ nvm install node | zsh
 # Use our linked .zshrc, rather than the one provided by oh-my-zsh
 # stow -d $STOW_DIR zsh
 
-pip install codespell
+# pip install codespell
 
 # fzf
 rm -rf ~/.fzf
